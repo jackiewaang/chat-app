@@ -14,23 +14,55 @@ const Signup = () => {
   const handleSubmit = async (e) => {
     e.preventDefault(); // prevent page reloading
 
+    // check matching passwords
     if(password !== confirm){
       setErrorMsg('Passwords do not match');
       return;
     }
 
-    const { data, error } = await supabase.auth.signUp({
+    // check if username exists already
+    const { data: usernameExists, error: usernameError } = await supabase.from('profiles').select('username').eq('username', username).single();
+
+    // handle database error
+    if (usernameError && usernameError.code !== 'PGRST116') {
+      setErrorMsg('Error checking username:', usernameError.message, '. Please try again.');
+      return;
+    }
+
+    // show message if user exists
+    if(usernameExists){
+      setErrorMsg('Username is already taken.');
+      return;
+    }
+
+    // signup the new user
+    const { data: signUpData, error: signUpError } = await supabase.auth.signUp({
       email: email,
       password: password,
     })
 
-    console.log(data);
     
-    if(error){
-      setErrorMsg(error.message);
-    } else{
-      navigate('/dashboard');
+    if(signUpError){
+      setPassword('');
+      setConfirm('');
+      setErrorMsg(signUpError.message);
+      return;
     }
+
+    // add username to database
+    const userId = signUpData.user.id;
+    const { error: profileError } = await supabase.from('profiles').insert([{ id: userId, username }]);
+
+    if(profileError){
+      console.error('Error saving profile:', profileError.message);
+      return;
+    }
+
+    setUsername('');
+    setEmail('');
+    setPassword('');
+    setConfirm('');
+    navigate('/dashboard');
 
   }
 

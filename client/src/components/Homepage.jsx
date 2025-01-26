@@ -19,7 +19,7 @@ const Homepage = () => {
             </div>
           </div>
         </nav>
-        <div className="w-full pt-20 flex justify-center items-center">
+        <div className="pt-20 flex justify-center items-center">
           <div className="border border-black rounded-lg bg-white shadow-lg p-10 flex flex-col justify-center items-center gap-5">
             <h1 className="text-6xl font-extrabold">{HERO_HEADING}</h1>
             <p className="text-xl">{HERO_SUBHEADING1}</p>

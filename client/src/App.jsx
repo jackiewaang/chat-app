@@ -9,6 +9,7 @@ const App = () => {
 
   return (
     <Router>
+      <ProtectedRoute element={<Navbar />} />
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/login" element={<AuthRoute element={<Login />} />} />

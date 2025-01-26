@@ -12,16 +12,17 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const { data, error } = await supabase.auth.signInWithPassword({
+    const { error } = await supabase.auth.signInWithPassword({
       email: email,
       password: password
     })
 
-    console.log(data);
-
     if(error){
       setErrorMsg(error.message);
     } else{
+      setEmail('');
+      setPassword('');
+      setErrorMsg('');
       navigate('/dashboard');
     }
   }
