@@ -51,7 +51,7 @@ const Signup = () => {
 
     // add username to database
     const userId = signUpData.user.id;
-    const { error: profileError } = await supabase.from('profiles').insert([{ id: userId, username }]);
+    const { error: profileError } = await supabase.from('profiles').insert({ id: userId, username: username });
 
     if(profileError){
       console.error('Error saving profile:', profileError.message);
