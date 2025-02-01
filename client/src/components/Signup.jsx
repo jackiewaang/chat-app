@@ -62,7 +62,7 @@ const Signup = () => {
     setEmail('');
     setPassword('');
     setConfirm('');
-    navigate('/dashboard');
+    navigate('/chat');
 
   }
 

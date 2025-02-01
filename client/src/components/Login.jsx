@@ -23,7 +23,7 @@ const Login = () => {
       setEmail('');
       setPassword('');
       setErrorMsg('');
-      navigate('/dashboard');
+      navigate('/chat');
     }
   }
 
@@ -42,7 +42,7 @@ const Login = () => {
                 />
                 {errorMsg && <p className="text-center text-red-500">{errorMsg}</p>}
                 <Link to="/forgot" className="text-sm text-green-500 hover:text-green-700 text-right">Forgot Password?</Link>
-                <button type="submit" className="w-full p-3 bg-green-500 hover:bg-green-600 rounded-lg">Log In</button>
+                <button type="submit" className="w-full p-3 bg-green-500 hover:bg-green-600 rounded-lg cursor-pointer">Log In</button>
                 <p className="text-center text-sm">
                     Don&#39;t have an account?
                     <Link to="/signup" className="text-green-500 hover:text-green-700"> Sign Up</Link>

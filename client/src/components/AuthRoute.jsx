@@ -6,7 +6,7 @@ const AuthRoute = ({ element }) => {
   
     const session = useSession();
 
-    return session ? <Navigate to="/dashboard" /> : element 
+    return session ? <Navigate to="/home" /> : element 
 }
 
 AuthRoute.propTypes = {

@@ -2,26 +2,19 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import { Login, Signup, Homepage, Navbar, Profile, Home, Chat} from "./components"
 import ProtectedRoute from './components/ProtectedRoute'
 import AuthRoute from './components/AuthRoute'
-import { useSession } from "./components/SessionContext"
-import Test from "./components/Test"
 
 const App = () => {
-
-  const session = useSession();
   
   return (
     <Router>
-      {/* {session ? <Navbar /> : null} */}
-      {/* <ProtectedRoute element={<Navbar />} /> */}
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/login" element={<AuthRoute element={<Login />} />} />
         <Route path="/signup" element={<AuthRoute element={<Signup />} />} />
-        <Route path="/home" element={<Home />} />
-        <Route path="/chat/:channel" element={<Chat />} />
-        <Route path="/profile/:username" element={<Profile />} />
-        <Route path="/test" element={<Test />} />
-        {/* <Route path="*" /> */}
+        <Route path="/home" element={<ProtectedRoute element={<Navbar><Home /></Navbar>} />} />
+        <Route path="/chat/:channel" element={<ProtectedRoute element={<Chat />} />} />
+        <Route path="/profile/:username" element={<ProtectedRoute element={<Navbar><Profile /></Navbar>} />} />
+        
       </Routes>
     </Router>
   )

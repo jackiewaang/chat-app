@@ -4,7 +4,7 @@ const Homepage = () => {
 
   return (
     <>
-    <div className="bg-gray-100 bg-[url(./assets/chatIcon.svg)] bg-repeat bg-center h-screen flex">
+    <div className="bg-gray-300 bg-[url(./assets/chatIcon.svg)] bg-repeat bg-center h-screen flex">
         <nav className="bg-white shadow-md fixed w-full z-10">
           <div className="flex justify-center md:justify-between items-center p-4">
             <h1 className="text-3xl font-bold">DotChat</h1>
@@ -19,8 +19,8 @@ const Homepage = () => {
             </div>
           </div>
         </nav>
-        <div className="pt-20 flex justify-center items-center">
-          <div className="border border-black rounded-lg bg-white shadow-lg p-10 flex flex-col justify-center items-center gap-5">
+        <div className="pt-20 flex justify-center items-center w-full">
+          <div className="rounded-lg bg-white shadow-lg p-10 flex flex-col justify-center items-center gap-5">
             <h1 className="text-6xl font-extrabold">{HERO_HEADING}</h1>
             <p className="text-xl">{HERO_SUBHEADING1}</p>
             <p className="text-xl">{HERO_SUBHEADING2}</p>
@@ -30,7 +30,7 @@ const Homepage = () => {
             </div>
           </div>
         </div>
-        </div>
+      </div>
     </>
   )
 }
