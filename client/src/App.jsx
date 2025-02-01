@@ -14,7 +14,7 @@ const App = () => {
         <Route path="/home" element={<ProtectedRoute element={<Navbar><Home /></Navbar>} />} />
         <Route path="/chat/:channel" element={<ProtectedRoute element={<Chat />} />} />
         <Route path="/profile/:username" element={<ProtectedRoute element={<Navbar><Profile /></Navbar>} />} />
-        
+        <Route path="*" element={<p>Not found</p>} />
       </Routes>
     </Router>
   )
