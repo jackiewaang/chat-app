@@ -104,15 +104,15 @@ const Chat = () => {
   return (
     <div className="h-screen flex flex-col bg-gray-100">
         <nav className="flex justify-between items-center p-5 z-10 bg-white shadow-md">
-            <Link to="/home"><IoIosCloseCircleOutline className="w-10 h-10" /></Link>
+            <Link to="/home" className="hover:scale-125 transition duration-300"><IoIosCloseCircleOutline className="w-10 h-10" /></Link>
             <h1 className="text-4xl">#{channel}</h1>
-            <Link to={`/chat/${channel}/edit`}><PiGearSixBold className="w-10 h-10"/></Link>
+            <Link to={`/chat/${channel}/edit`} className="hover:scale-125 transition duration-300"><PiGearSixBold className="w-10 h-10"/></Link>
         </nav>
 
         <div className="flex-1 overflow-y-auto p-4 space-y-4">
             {messages.map((msg) => (
                 <div key={msg.id} className="flex items-center space-x-3">
-                    <img src={msg.avatar} alt={msg.username} className="w-10 h-10 rounded-full" />
+                    <img src={`https://ui-avatars.com/api/?name=${msg.username}`} alt={msg.username} className="w-10 h-10 rounded-full" />
                     <div className="bg-white p-3 rounded-lg shadow-md max-w-xs min-w-32">
                         <div className="text-sm font-semibold">{msg.username}</div>
                         <p className="text-gray-700">{msg.content}</p>
@@ -129,7 +129,7 @@ const Chat = () => {
             onChange={(e) => setNewMessage(e.target.value)}
             onKeyDown={(e) => e.key === "Enter" && sendMessage()}
             />
-            <button onClick={sendMessage} className="cursor-pointer ml-3 p-2 bg-blue-500 text-white rounded-lg">
+            <button onClick={sendMessage} className="hover:scale-125 transition duration-300 cursor-pointer ml-3 p-2 bg-blue-500 text-white rounded-lg">
                 <IoIosSend className="w-6 h-6" />
             </button>
         </div>

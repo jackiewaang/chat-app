@@ -24,7 +24,7 @@ const Profile = () => {
     <div className='h-screen p-6 flex'>
         <div className='flex flex-1 flex-col items-center'>
             <div className='w-24 h-24 rounded-full overflow-hidden border mb-3'>
-                <img src="#" alt="profile" className='w-full h-full object-cover' />
+                <img src={`https://ui-avatars.com/api/?name=${username}`} alt="profile" className='w-full h-full object-cover' />
             </div>
             <div className='flex flex-col items-center gap-3 justify-center '>
                 <h1 className='text-3xl font-semibold'>{username}</h1>
