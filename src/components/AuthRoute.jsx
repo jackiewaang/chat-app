@@ -5,6 +5,7 @@ import PropTypes from 'prop-types'
 const AuthRoute = ({ element }) => {
   
     const session = useSession();
+    console.log(session);
 
     return session ? <Navigate to="/home" /> : element 
 }

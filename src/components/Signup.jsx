@@ -62,7 +62,7 @@ const Signup = () => {
     setEmail('');
     setPassword('');
     setConfirm('');
-    navigate('/chat');
+    navigate('/home');
 
   }
 
@@ -89,7 +89,7 @@ const Signup = () => {
           />
 
           {errorMsg && <p className="text-center text-red-500">{errorMsg}</p>}
-          <button type="submit" className="w-full p-3 bg-green-500 hover:bg-green-600 rounded-lg">Sign Up</button>
+          <button type="submit" className="cursor-pointer w-full p-3 bg-green-500 hover:bg-green-600 rounded-lg">Sign Up</button>
           <p className="text-center text-sm">
               Already have an account?
               <Link to="/login" className="text-green-500 hover:text-green-700"> Log In</Link>
