@@ -3,6 +3,7 @@ import { Login, Signup, Homepage, Navbar, Profile, Home, Chat} from "./component
 import ProtectedRoute from './components/ProtectedRoute'
 import AuthRoute from './components/AuthRoute'
 import { useSession } from "./components/SessionContext"
+import Test from "./components/Test"
 
 const App = () => {
 
@@ -19,6 +20,7 @@ const App = () => {
         <Route path="/home" element={<Home />} />
         <Route path="/chat/:channel" element={<Chat />} />
         <Route path="/profile/:username" element={<Profile />} />
+        <Route path="/test" element={<Test />} />
         {/* <Route path="*" /> */}
       </Routes>
     </Router>

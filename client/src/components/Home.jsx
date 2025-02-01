@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import supabase from "../supabase"
 import { Link } from "react-router-dom";
+import { MdEdit } from "react-icons/md";
 
 const Home = () => {
 
@@ -20,12 +21,15 @@ const Home = () => {
     }, [])
 
   return (
-    <div className="h-screen p-4">
-        <h1 className="text-xl font-bold mb-4">Available Channels</h1>
-        <div className="flex flex-col gap-2">
+    <div className="h-screen p-4 flex flex-col">
+        <nav className="flex justify-between items-center p-3 border-b">
+            <MdEdit className="w-6 h-6 cursor-pointer"/>
+            <h1 className="text-2xl font-bold">Available Channels</h1>
+        </nav>
+        <div className="flex flex-col gap-2 mt-4">
             {channels.length > 0 ? (
                 channels.map((channel) => (
-                    <Link key={channel.id} to={`/chat/${channel.name}`} className="p-3 bg-gray-200 rounded-lg shadow-sm">
+                    <Link key={channel.id} to={`/chat/${channel.name}`} className="p-5 bg-gray-200 rounded-lg shadow-sm text-xl">
                         #{channel.name}
                     </Link>
                 ))
