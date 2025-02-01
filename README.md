@@ -1,22 +1,8 @@
-# chat-app
+# React + Vite
 
-Core Requirements
-- Design Dashboard
-- Design and implement chat
-- Implement Sign out
-- edit profile
-- delete profile
-- deploy project
-- clear credential states after login/signup
-- make home as dashboard instead
-- implement search profiles by username
-- implement create new groupchat
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Additional Requirements
-- dark mode
-- confirm email and authentication with providers
-- send images, files
-- chatrooms
-- user presence and typing indicator
-- admin features (ban, edit room)
-- add more tables in database
+Currently, two official plugins are available:
+
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
