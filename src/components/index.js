@@ -5,5 +5,6 @@ import Homepage from './Homepage'
 import Profile from './Profile'
 import Home from './Home'
 import Chat from './Chat'
+import Search from './Search'
 
-export { Home, Login, Signup, Navbar, Homepage, Profile, Chat}
+export { Home, Login, Signup, Navbar, Homepage, Profile, Chat, Search}

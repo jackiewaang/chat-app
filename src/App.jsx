@@ -1,8 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
-import { Login, Signup, Homepage, Navbar, Profile, Home, Chat} from "./components"
+import { Login, Signup, Homepage, Navbar, Profile, Home, Chat, Search} from "./components"
 import ProtectedRoute from './components/ProtectedRoute'
 import AuthRoute from './components/AuthRoute'
-import Test from "./components/Test"
 
 const App = () => {
   
@@ -15,8 +14,8 @@ const App = () => {
         <Route path="/home" element={<ProtectedRoute element={<Navbar><Home /></Navbar>} />} />
         <Route path="/chat/:channel" element={<ProtectedRoute element={<Chat />} />} />
         <Route path="/profile/:username" element={<ProtectedRoute element={<Navbar><Profile /></Navbar>} />} />
-        <Route path="/test" element={<Test />} />
-        <Route path="*" element={<p>Not found</p>} />
+        <Route path="/search" element={<ProtectedRoute element={<Navbar><Search /></Navbar>} />} />
+        <Route path="*" element={<p>Page not found</p>} />
       </Routes>
     </Router>
   )
